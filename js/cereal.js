@@ -79,6 +79,7 @@ function knapSack(W, wt, val, n, d) {
    // stores the result of Knapsack
    let res = K[n][W];
    console.log(res);
+   console.log(K);
    let O = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
 
    w = W;
@@ -94,7 +95,7 @@ function knapSack(W, wt, val, n, d) {
       else {
 
          // This item is included.
-         console.log(i - 1 + " " + Math.floor((i - 1) / Math.ceil(((10 - d) / 2) + 1)));
+         //console.log(i - 1 + " " + Math.floor((i - 1) / Math.ceil(((10 - d) / 2) + 1)));
          O[Math.floor((i - 1) / Math.ceil(((10 - d) / 2) + 1))] += 1;
 
          // Since this weight is included its
@@ -113,7 +114,10 @@ function generateRating(rating, h, e, s, m, c) {
    x += rating[2] * s;
    x += rating[3] * m;
    x += rating[4] * c;
-   return x;
+   if (rating[4] * 1 > Math.ceil((rating[0] * 1 + rating[1] * 1 + rating[2] * 1 + rating[3] * 1) / 2)) {
+      x += rating[4] * 1;
+   }
+   return Math.floor(x);
 }
 
 function displayOrder(order) {
@@ -159,7 +163,7 @@ document.querySelector("#submit").addEventListener("click", function () {
       return;
    }
 
-   let price = [4.5, 5.5, 5, 5, 5, 5.5, 5, 4.5, 5, 5, 4.5, 6, 4.5, 5, 5];
+   let price = [5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5];
    let prices = [];
    let ratings = [[2, 3, 1, 1, 0], [1, 3, 2, 3, 2], [1, 1.5, 3, 1.5, 1],
    [1, 1, 3.5, 1, 0], [2, 2, 2, 1, 0], [3, 2, 0, 2, 0],
@@ -170,7 +174,7 @@ document.querySelector("#submit").addEventListener("click", function () {
 
    for (let i = 0; i < 15; i += 1) {
       for (let j = 0; j < ((10 - d) / 2) + 1; j += 1) {
-         prices.push(Math.round(price[i] * 2));
+         prices.push(Math.round(price[i]));
 
          values.push(generateRating(ratings[i], h, f, s, m, c));
       }
@@ -179,7 +183,7 @@ document.querySelector("#submit").addEventListener("click", function () {
    console.log(prices);
    console.log(values);
 
-   let order = knapSack(b * 2, prices, values, values.length, d);
+   let order = knapSack(b, prices, values, values.length, d);
    console.log(order);
 
    displayOrder(order);
