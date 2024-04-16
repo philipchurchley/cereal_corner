@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="css/html5reset.css">
+   <link rel="stylesheet" href="css/style.css">
+   <style>
+      @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+   </style>
+   <title>Home</title>
+</head>
+
+<body>
+   <header>
+      <nav>
+         <a href="index.html" class="noncurrent"><img src="images/cereal.png">CEREAL CORNER</a>
+         <a href="custom.html" class="current">Your Cereals</a>
+         <a href="favs.html" class="noncurrent">Phil's Favs</a>
+         <a href="about.html" class="noncurrent">About</a>
+         <button id="menu-button">☰</button>
+      </nav>
+      <div id="nav-dropdown" class="nav-dropdown">
+         <a href="index.html">Home</a>
+         <a href="custom.html" class="curr">Your Cereals</a>
+         <a href="favs.html">Phil's Favs</a>
+         <a href="about.html">About</a>
+      </div>
+   </header>
+   <main>
+      <h1>Customize your cereal order!</h1>
+      <div class="step step1">
+         <div>
+            <h2>Step 1: </h2>
+            <p>Please rate how much you value the following factors in your cereal. Use a scale from 1-10. </p>
+            </br>
+            <label for="diversity">Diversity:</label>
+            <input type="text" id="diversity" name="diversity" value="">
+            <br>
+            <label for="health">Healthiness:</label>
+            <input type="text" id="health" name="health" value="">
+            <br>
+            <label for="fruit">Eaten with Fruit:</label>
+            <input type="text" id="fruit" name="fruit" value="">
+            <br>
+            <label for="sugar">Sugar and Sweetness:</label>
+            <input type="text" id="sugar" name="sugar" value="">
+            <br>
+            <label for="mix">Mixing Value:</label>
+            <input type="text" id="mix" name="mix" value="">
+            <br>
+            <label for="choc">Chocolatiness:</label>
+            <input type="text" id="choc" name="choc" value="">
+            <br><br>
+         </div>
+         <img src="images/cereal2.png">
+      </div>
+      <div class="step step2">
+         <div>
+            <h2>Step 2: </h2>
+            <p>Please input your budget! (Use a whole numbers, in dollars)</p>
+            </br>
+            <label for="budget">Budget: $</label>
+            <input type="text" id="budget" name="budget" value="">
+            <br><br>
+         </div>
+         <img src="images/money.png">
+      </div>
+      <button id="submit">Submit</button>
+      <br>
+      <h2 id="order-header"><br><br><br>I suggest that you order:</h2>
+      <div id="result-area">
+         <div class="results">
+            <div>
+               <h3>Cheerios</h3>
+               <p>Quantity: <span>5</span></p><br>
+               <p>Info Info Info Info Info Info Info</p>
+            </div>
+            <img src="images/cheerios.png">
+         </div>
+         <div class="results">
+            <div>
+               <h3>Chocolate Chex</h3>
+               <p>Quantity: <span>5</span></p><br>
+               <p>Info Info Info Info Info Info Info</p>
+            </div>
+            <img src="images/chex.png">
+         </div>
+         <div class="results">
+            <div>
+               <h3>Cinnamon Toast Crunch</h3>
+               <p>Quantity: <span>5</span></p><br>
+               <p>Info Info Info Info Info Info Info</p>
+            </div>
+            <img src="images/ctc.png">
+         </div>
+         <div class="results">
+            <div>
+               <h3>Fruit Loops</h3>
+               <p>Quantity: <span>5</span></p><br>
+               <p>Info Info Info Info Info Info Info</p>
+            </div>
+            <img src="images/floops.png">
+         </div>
+         <div class="results">
+            <div>
+               <h3>Frosted Flakes</h3>
+               <p>Quantity: <span>5</span></p><br>
+               <p>Info Info Info Info Info Info Info</p>
+            </div>
+            <img src="images/froflakes.png">
+         </div>
+         <div class="results">
+            <div>
+               <h3>Great Grains</h3>
+               <p>Quantity: <span>5</span></p><br>
+               <p>Info Info Info Info Info Info Info</p>
+            </div>
+            <img src="images/greatgrains.png">
+         </div>
+         <div class="results">
+            <div>
+               <h3>Honey Bunches of Oats</h3>
+               <p>Quantity: <span>5</span></p><br>
+               <p>Info Info Info Info Info Info Info</p>
+            </div>
+            <img src="images/hboo.png">
+         </div>
+         <div class="results">
+            <div>
+               <h3>Life Cereal</h3>
+               <p>Quantity: <span>5</span></p><br>
+               <p>Info Info Info Info Info Info Info</p>
+            </div>
+            <img src="images/life.png">
+         </div>
+         <div class="results">
+            <div>
+               <h3>Lucky Charms</h3>
+               <p>Quantity: <span>5</span></p><br>
+               <p>Info Info Info Info Info Info Info</p>
+            </div>
+            <img src="images/luckycharms.png">
+         </div>
+         <div class="results">
+            <div>
+               <h3>Mini Wheats</h3>
+               <p>Quantity: <span>5</span></p><br>
+               <p>Info Info Info Info Info Info Info</p>
+            </div>
+            <img src="images/miniwheats.png">
+         </div>
+         <div class="results">
+            <div>
+               <h3>Raisin Bran</h3>
+               <p>Quantity: <span>5</span></p><br>
+               <p>Info Info Info Info Info Info Info</p>
+            </div>
+            <img src="images/rbran.png">
+         </div>
+         <div class="results">
+            <div>
+               <h3>Reeces Puffs</h3>
+               <p>Quantity: <span>5</span></p><br>
+               <p>Info Info Info Info Info Info Info</p>
+            </div>
+            <img src="images/reeces.png">
+         </div>
+         <div class="results">
+            <div>
+               <h3>Rice Krispies</h3>
+               <p>Quantity: <span>5</span></p><br>
+               <p>Info Info Info Info Info Info Info</p>
+            </div>
+            <img src="images/ricekrisp.png">
+         </div>
+         <div class="results">
+            <div>
+               <h3>Chocolate Cheerios</h3>
+               <p>Quantity: <span>5</span></p><br>
+               <p>Info Info Info Info Info Info Info</p>
+            </div>
+            <img src="images/scheerios.png">
+         </div>
+         <div class="results">
+            <div>
+               <h3>Special K: Red Berries</h3>
+               <p>Quantity: <span>5</span></p><br>
+               <p>Info Info Info Info Info Info Info</p>
+            </div>
+            <img src="images/specialkred.png">
+         </div>
+      </div>
+   </main>
+</body>
+
+<footer>
+   <div class="first-footer">
+      <div>
+         <h3>About</h3>
+         <div class="first-footer-sub">
+            <a href="https://github.com/philipchurchley">Github</a>
+            <a href="https://soundcloud.com/philip-churchley">SoundCloud</a>
+            <a href="https://www.youtube.com/@PhilipChurchley">YouTube</a>
+         </div>
+      </div>
+      <div>
+         <h3>Contact</h3>
+         <div class="first-footer-sub">
+            <a href="https://www.instagram.com/p.churchley/">Instagram</a>
+            <a href="https://www.linkedin.com/in/philip-churchley/">LinkedIn</a>
+            <a href="mailto:pchurchl@umich.edu">pchurchl@umich.edu</a>
+         </div>
+      </div>
+   </div>
+   <div class="second-footer">
+      <p>© Copyright Philip Churchley 2024 - 2025</p>
+   </div>
+</footer>
+<script src="js/cereal.js"></script>
+
+</html>

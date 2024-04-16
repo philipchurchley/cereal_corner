@@ -1,0 +1,14 @@
+Sisal (greyish)
+#D8CEC4
+
+Solid Pink (dark pink)
+#79344C
+
+Sycamore (brown)
+#988240
+
+Pelorous (blueish)
+#4B96C4
+
+Dark brown
+#382a00
