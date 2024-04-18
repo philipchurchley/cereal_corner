@@ -80,7 +80,7 @@ function knapSack(W, wt, val, n, d) {
    let res = K[n][W];
    console.log(res);
    console.log(K);
-   let O = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+   let O = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
 
    w = W;
    for (i = n; i > 0 && res > 0; i--) {
@@ -113,20 +113,17 @@ function generateRating(rating, h, e, s, m, c) {
    x += rating[1] * e;
    x += rating[2] * s;
    x += rating[3] * m;
-   x += rating[4] * c;
-   if (rating[4] * 1 > Math.ceil((rating[0] * 1 + rating[1] * 1 + rating[2] * 1 + rating[3] * 1) / 2)) {
-      x += rating[4] * 1;
-   }
+   x += rating[4] * ((c * 1) - 5); //makes choc neither a plus or minus, it's just what they decide
    return Math.floor(x);
 }
 
 function displayOrder(order) {
-   for (let i = 0; i < 15; i++) {
+   for (let i = 0; i < order.length; i++) {
       document.getElementsByClassName("results")[i].style.display = "none"
    }
    document.getElementById("order-header").style.display = "block";
    document.getElementById("result-area").style.display = "grid";
-   for (let i = 0; i < 15; i++) {
+   for (let i = 0; i < order.length; i++) {
       if (order[i] > 0) {
          document.getElementsByClassName("results")[i].style.display = "flex"
          document.querySelectorAll(".results span")[i].innerHTML = order[i];
@@ -144,11 +141,11 @@ document.querySelector("#submit").addEventListener("click", function () {
    let b = document.querySelector("#budget").value;
 
    if (isNaN(d) || d < 1 || d > 10 ||
-      isNaN(h) || d < 1 || d > 10 ||
-      isNaN(f) || d < 1 || d > 10 ||
-      isNaN(s) || d < 1 || d > 10 ||
-      isNaN(m) || d < 1 || d > 10 ||
-      isNaN(c) || d < 1 || d > 10) {
+      isNaN(h) || h < 1 || h > 10 ||
+      isNaN(f) || f < 1 || f > 10 ||
+      isNaN(s) || s < 1 || s > 10 ||
+      isNaN(m) || m < 1 || m > 10 ||
+      isNaN(c) || c < 1 || c > 10) {
       alert("Please enter numbers between 1 and 10");
       return;
    }
@@ -163,18 +160,28 @@ document.querySelector("#submit").addEventListener("click", function () {
       return;
    }
 
-   let price = [5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5];
+   let price = [5, 5, 5,
+      5, 5, 5.5,
+      5, 5, 5,
+      5, 5, 5.5,
+      4.5, 5, 5,
+      5, 5, 5,
+      5, 5.5, 5];
    let prices = [];
-   let ratings = [[2, 3, 1, 1, 0], [1, 3, 2, 3, 2], [1, 1.5, 3, 1.5, 1],
-   [1, 1, 3.5, 1, 0], [2, 2, 2, 1, 0], [3, 2, 0, 2, 0],
-   [3, 3, 1, 3, 0], [2, 3, 1, 1, 0], [1, 0, 4, 1, 0],
-   [3, 2, 1, 1, 0], [3, 1, 1, 1, 0], [0.7, 2, 3, 2, 2],
-   [2, 2, 0, 2, 0], [1, 2, 2, 2, 2], [3, 1, 2, 1, 0]];
+   //health, fruit, sugary, mixing, chocolate. Totals to around 22ish (not counting chocolatiness)
+   //note that chocolatiness is out of 3, since we don't want it to be too prevalent
+   let ratings = [[6, 8, 5, 3, 0], [5, 8, 5, 5, 3], [2, 5, 9, 5, 0], //cheerios, chex, ctc
+   [4, 5, 8, 3, 0], [7, 7, 5, 3, 0], [10, 7, 0, 5, 0], //floops, froflakes, Great Grains
+   [7, 7, 2, 7, 0], [7, 6, 3, 6, 0], [3, 3, 11, 2, 0], //Hboo, Life, Lucky Charms
+   [7, 9, 3, 3, 0], [9, 5, 2, 5, 0], [2, 6, 8, 6, 3], //Mini Wheats, Rbran, Reeces
+   [6, 6, 0, 7, 0], [5, 8, 6, 3, 4], [7, 5, 4, 6, 0], //Rkrispies, chococheerios, specialkred
+   [4, 6, 5, 6, 4], [2, 6, 7, 6, 4], [7, 6, 4, 5, 0], //cokrispies, cpebs, specialkpurp
+   [6, 6, 7, 4, 4], [5, 6, 6, 5, 0], [3, 5, 8, 6, 3]]; //chominiwheats, honeyo's, krave
    let values = [];
 
-   for (let i = 0; i < 15; i += 1) {
+   for (let i = 0; i < price.length; i += 1) {
       for (let j = 0; j < ((10 - d) / 2) + 1; j += 1) {
-         prices.push(Math.round(price[i]));
+         prices.push(Math.round(price[i] * 2));
 
          values.push(generateRating(ratings[i], h, f, s, m, c));
       }
@@ -183,7 +190,7 @@ document.querySelector("#submit").addEventListener("click", function () {
    console.log(prices);
    console.log(values);
 
-   let order = knapSack(b, prices, values, values.length, d);
+   let order = knapSack(b * 2, prices, values, values.length, d);
    console.log(order);
 
    displayOrder(order);

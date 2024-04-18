@@ -203,6 +203,12 @@ input:hover {
    width: 170px;
 }
 
+.input {
+   width: 70%;
+   display: flex;
+   justify-content: space-between;
+}
+
 @media (prefers-reduced-motion) {
    .nav-dropdown {
       transition: all 0s ease-in-out;
@@ -242,9 +248,17 @@ input:hover {
       grid-template-columns: 1fr 1fr;
    }
 
+   .input {
+      width: 50%;
+   }
+
    @media screen and (min-width: 960px) {
       #result-area {
          grid-template-columns: 1fr 1fr 1fr;
+      }
+
+      .input {
+         width: 25%;
       }
    }
 }
