@@ -198,6 +198,11 @@ input {
    background-color: #fff0e1;
 }
 
+.step .label {
+   vertical-align: baseline;
+   display: inline-block;
+}
+
 .step label {
    font-size: 18px;
 }
