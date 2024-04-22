@@ -7,6 +7,11 @@ body {
    display: flex;
    flex-direction: column;
    box-sizing: border-box;
+   font-size: 16px;
+}
+
+p {
+   font-size: 18px;
 }
 
 .top {
@@ -31,7 +36,7 @@ h1 {
 
 h2 {
    font-weight: 600;
-   font-size: 20px;
+   font-size: 22px;
    text-decoration: underline;
    margin-bottom: 5px;
 }
@@ -193,6 +198,10 @@ input {
    background-color: #fff0e1;
 }
 
+.step label {
+   font-size: 18px;
+}
+
 .step1 {
    display: grid;
    grid-template-columns: 80% 20%;
@@ -252,6 +261,11 @@ input:hover {
    animation-fill-mode: forwards;
 }
 
+.results p {
+   font-size: 16px;
+   margin-right: 10px;
+}
+
 @keyframes fadeIn {
    from {
       opacity: 0;
@@ -284,6 +298,34 @@ input:hover {
 
 em {
    font-weight: 800;
+}
+
+.intro p,
+.intro h3,
+.intro h3 p {
+   font-size: 18px;
+   line-height: 1.4;
+}
+
+#about-grid {
+   display: grid;
+   grid-template-columns: 1fr;
+   column-gap: 5%;
+   row-gap: 20px;
+}
+
+#about-grid img {
+   width: 80%;
+   margin-left: 10%;
+   margin-right: 10%;
+   border: 2px solid black;
+   border-radius: 20px;
+}
+
+#about-grid p,
+#about-grid ul {
+   line-height: 1.3;
+   margin-bottom: 10px;
 }
 
 
@@ -330,9 +372,21 @@ em {
       width: 50%;
    }
 
+   #about-grid {
+      grid-template-columns: 1fr 1fr;
+   }
+
+   #about-grid img {
+      width: 85%;
+   }
+
    @media screen and (min-width: 960px) {
       #result-area {
          grid-template-columns: 1fr 1fr 1fr;
+      }
+
+      #about-grid img {
+         width: 75%;
       }
 
       .input {

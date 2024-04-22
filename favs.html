@@ -5,6 +5,7 @@
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <link rel="stylesheet" href="css/html5reset.css">
+   <link rel="stylesheet" href="css/favcarousel.css">
    <link rel="stylesheet" href="css/style.css">
    <style>
       @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
@@ -31,7 +32,60 @@
       </div>
    </header>
    <main id="main-content">
-
+      <h1>Philip's Favorites</h1>
+      <!--intro-->
+      <div class="step intro">
+         <p>
+            Now that you know what you like, let me give my own personal recommendations that I believe everyone should
+            try! These are cereals that I personaly enjoy with every cereal order, and while that doesn't mean that
+            you'll enjoy them too, I thought it might be fun to let you check them out.
+         </p>
+      </div>
+      <div id="cerealfactors">
+         <h2>My Favorite Cereals:</h2>
+      </div>
+      <!--info on cereal factors (carousel?)-->
+      <div class="container">
+         <div class="card-carousel">
+            <div class="card step" id="1" title="Try dragging to rotate through the cards">
+               <div class="image-container"></div>
+               <p>
+               <h3>Krave: </h3><br> Eaten by itself or mixed with strawberries, and chex cereal.
+               </p>
+            </div>
+            <div class="card step" id="2" title="Try dragging to rotate through the cards">
+               <div class="image-container"></div>
+               <p>
+               <h3>Chocolate Mini Wheats: </h3><br> Eaten by itself or with blueberries. This cereal has unfortunately
+               been discontinued.
+               </p>
+            </div>
+            <div class="card step" id="3" title="Try dragging to rotate through the cards">
+               <div class="image-container"></div>
+               <p>
+               <h3>Honey Bunches of Oats: </h3><br> Eaten with any fruit and granola. Optional mix with other cereals
+               such as Special K, Life, Great Grains, or Golden Grahams.
+               </p>
+            </div>
+            <div class="card step" id="4" title="Try dragging to rotate through the cards">
+               <div class="image-container"></div>
+               <p>
+               <h3>Count Chocula: </h3><br> Eaten by itself or with blueberries and granola. This cereal is only
+               distributed during the halloween season, but it's best to get it post-halloween on clearance.
+               </p>
+            </div>
+            <div class="card step" id="5" title="Try dragging to rotate through the cards">
+               <div class="image-container"></div>
+               <p>
+               <h3>Chocolate Chex: </h3><br> Eaten with chocolate granola, strawberries, blueberries, and peanut butter
+               chex. I recommend Love Crunch brand granola (either chocolate & red berries or chocolate & peanut butter)
+               </p>
+            </div>
+         </div>
+         <a href="#" class="visuallyhidden card-controller">Carousel controller</a>
+      </div>
+      <div id="arrows"><button id="right" tabindex="0">&lt</button><button id="left" tabindex="0">&gt</button></div>
+      <br><br><br>
    </main>
 </body>
 
@@ -59,5 +113,7 @@
    </div>
 </footer>
 <script src="js/cereal.js"></script>
+<script src="js/favcards.js"></script>
+<script src="js/carousel.js"></script>
 
 </html>

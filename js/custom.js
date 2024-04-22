@@ -180,7 +180,7 @@ document.querySelector("#submit").addEventListener("click", function () {
       return;
    }
 
-   let price = [5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5];
+   let price = [5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5]; //this will result in the same result as if solved w greedy algorithm
 
    if (optw) {
       let coefficients = [0.31, 0.34, 0.31, 0.35, 0.31, 0.31, 0.32, 0.29, 0.31, 0.29, 0.29, 0.30, 0.32, 0.31, 0.32, 0.31, 0.31, 0.31, 0.31, 0.41, 0.33]
@@ -198,12 +198,12 @@ document.querySelector("#submit").addEventListener("click", function () {
    //health, fruit, sugary, mixing, chocolate. Totals to around 22ish (not counting chocolatiness)
    //note that chocolatiness is out of 3, since we don't want it to be too prevalent
    let ratings = [[6, 8, 5, 3, 0], [5, 8, 5, 5, 3], [2, 5, 9, 5, 0], //cheerios, chex, ctc
-   [4, 5, 8, 3, 0], [7, 7, 5, 3, 0], [10, 7, 0, 5, 0], //floops, froflakes, Great Grains
+   [4, 5, 8, 3, 0], [7, 7, 5, 3, 0], [10, 6, 0, 6, 0], //floops, froflakes, Great Grains
    [7, 7, 2, 7, 0], [7, 6, 3, 6, 0], [3, 3, 11, 2, 0], //Hboo, Life, Lucky Charms
    [7, 9, 3, 3, 0], [9, 5, 2, 5, 0], [2, 6, 8, 6, 3], //Mini Wheats, Rbran, Reeces
    [6, 6, 0, 7, 0], [5, 8, 6, 3, 4], [7, 5, 4, 6, 0], //Rkrispies, chococheerios, specialkred
    [4, 6, 5, 6, 4], [2, 6, 7, 6, 4], [7, 6, 4, 5, 0], //cokrispies, cpebs, specialkpurp
-   [7, 3, 7, 5, 0], [7, 5, 8, 3, 0], [3, 5, 8, 6, 3]]; //golden grahams, honeyo's, krave
+   [7, 3, 7, 5, 0], [6, 5, 8, 3, 0], [3, 5, 8, 6, 3]]; //golden grahams, honeyo's, krave
    let values = [];
 
    for (let i = 0; i < price.length; i += 1) {
