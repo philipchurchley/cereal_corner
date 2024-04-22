@@ -6,6 +6,12 @@ body {
    min-height: 100vh;
    display: flex;
    flex-direction: column;
+   box-sizing: border-box;
+}
+
+.top {
+   padding: 5px;
+   background-color: #79344C;
 }
 
 main {
@@ -56,6 +62,10 @@ footer {
    align-items: center;
 }
 
+a {
+   color: #382a00;
+}
+
 .first-footer-sub a {
    text-decoration: none;
    font-size: 16px;
@@ -77,7 +87,8 @@ footer {
    margin-top: 0;
 }
 
-a:hover {
+a:hover,
+a:focus {
    text-decoration: underline;
 }
 
@@ -140,6 +151,19 @@ nav a:first-child {
    padding-left: 10%;
 }
 
+#priceopt {
+   display: inline-block;
+   border-radius: 9px;
+   border: 2px solid #382a00;
+   width: 13px;
+   height: 13px;
+   background-color: rgb(255, 245, 230);
+   margin-top: 5px;
+   margin-left: 5px;
+   color: whitesmoke;
+   text-align: center;
+}
+
 input {
    width: 20px;
    border-radius: 15px;
@@ -166,10 +190,37 @@ input {
    border-radius: 20px;
    padding: 10px;
    margin: 10px;
+   background-color: #fff0e1;
+}
+
+.step1 {
+   display: grid;
+   grid-template-columns: 80% 20%;
 }
 
 .step img {
    display: none;
+}
+
+
+.intro {
+   text-align: center;
+   padding: 10px 10%;
+   margin: 5% 5%;
+}
+
+#skip {
+   position: absolute;
+   top: -9999px;
+   left: -9999px;
+   transform: translate(-9999px, -9999px);
+   background-color: rgb(199, 199, 199);
+   color: black;
+}
+
+#skip:focus {
+   position: static;
+   transform: none;
 }
 
 #submit {
@@ -197,6 +248,28 @@ input:hover {
    margin: 10px;
    display: flex;
    justify-content: space-between;
+   animation-duration: 0.5s;
+   animation-fill-mode: forwards;
+}
+
+@keyframes fadeIn {
+   from {
+      opacity: 0;
+   }
+
+   to {
+      opacity: 1;
+   }
+}
+
+@keyframes fadeOut {
+   from {
+      opacity: 1;
+   }
+
+   to {
+      opacity: 0;
+   }
 }
 
 .results img {
@@ -208,6 +281,12 @@ input:hover {
    display: flex;
    justify-content: space-between;
 }
+
+em {
+   font-weight: 800;
+}
+
+
 
 @media (prefers-reduced-motion) {
    .nav-dropdown {
@@ -224,17 +303,16 @@ input:hover {
       font-style: italic;
    }
 
+   .intro {
+      margin: 5% 10% 0% 10%;
+   }
+
    nav a {
       font-size: 19px;
    }
 
    nav {
       justify-content: start;
-   }
-
-   .step {
-      display: grid;
-      grid-template-columns: 80% 20%;
    }
 
    .step img {

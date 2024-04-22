@@ -14,6 +14,8 @@
 
 <body>
    <header>
+      <div class="top"></div>
+      <a href="#main-content" id="skip" tabindex="0">Skip to Main Content</a>
       <nav>
          <a href="index.html" class="noncurrent"><img src="images/cereal.png">CEREAL CORNER</a>
          <a href="custom.html" class="current">Your Cereals</a>
@@ -28,41 +30,48 @@
          <a href="about.html">About</a>
       </div>
    </header>
-   <main>
+   <main id="main-content">
       <h1>Customize your cereal order!</h1>
       <div class="step step1">
          <div>
             <h2>Step 1: </h2>
             <p>Please rate how much you value the following factors in your cereal. Use a scale from 1-10. </p>
             </br>
-            <div class="input"><label for="diversity">Diversity:</label>
+            <div class="input"><label for="diversity"
+                  title="Rate how important it is to buy a diverse set of cereals">Diversity:</label>
                <input type="text" id="diversity" name="diversity" value="">
             </div>
-            <div class="input"><label for="health">Healthiness:</label>
+            <div class="input"><label for="health"
+                  title="Rate how much you value health in your cereal">Healthiness:</label>
                <input type="text" id="health" name="health" value="">
             </div>
-            <div class="input"><label for="fruit">Eaten with Fruit:</label>
+            <div class="input"><label for="fruit" title="Rate how much you like your cereal with fruit">Fruit
+                  Compatibility:</label>
                <input type="text" id="fruit" name="fruit" value="">
             </div>
-            <div class="input"><label for="sugar">Sugary Sweetness:</label>
+            <div class="input"><label for="sugar" title="Rate how much you like sugary cereals">Sugary
+                  Sweetness:</label>
                <input type="text" id="sugar" name="sugar" value="">
             </div>
-            <div class="input"><label for="mix">Mixing Value:</label>
+            <div class="input"><label for="mix" title="Rate how much you value mixing cereals">Mix Value:</label>
                <input type="text" id="mix" name="mix" value="">
             </div>
-            <div class="input"><label for="choc">Chocolatiness:</label>
+            <div class="input"><label for="choc"
+                  title="Rate how much you like chocolatey cereals">Chocolatiness:</label>
                <input type="text" id="choc" name="choc" value="">
             </div><br>
          </div>
          <img src="images/cereal2.png">
       </div>
-      <div class="step step2">
+      <div class="step step1">
          <div>
             <h2>Step 2: </h2>
             <p>Please input your budget! (Use a whole numbers, in dollars)</p>
             </br>
             <label for="budget">Budget: $</label>
-            <input type="text" id="budget" name="budget" value="">
+            <input type="text" id="budget" name="budget" value=""><br>
+            <label for="priceopt" title="Prioritizes cost efficient cereals">Conserve my Money</label>
+            <div tabindex="0" id="priceopt" name="priceopt" title="Prioritizes cost efficient cereals"></div>
             <br><br>
          </div>
          <img src="images/money.png">
@@ -217,15 +226,15 @@
          </div>
          <div class="results">
             <div>
-               <h3>Chocolate Mini Wheats Little Bites</h3>
+               <h3>Golden Grahams</h3>
                <p>Quantity: <span>5</span></p><br>
                <p>Info Info Info Info Info Info Info</p>
             </div>
-            <img src="images/chowheats.png">
+            <img src="images/fadre.png">
          </div>
          <div class="results">
             <div>
-               <h3>Honey O's</h3>
+               <h3>Honey Oh's</h3>
                <p>Quantity: <span>5</span></p><br>
                <p>Info Info Info Info Info Info Info</p>
             </div>
@@ -248,17 +257,17 @@
       <div>
          <h3>About</h3>
          <div class="first-footer-sub">
-            <a href="https://github.com/philipchurchley">Github</a>
-            <a href="https://soundcloud.com/philip-churchley">SoundCloud</a>
-            <a href="https://www.youtube.com/@PhilipChurchley">YouTube</a>
+            <a href="https://github.com/philipchurchley" target="_blank">Github</a>
+            <a href="https://soundcloud.com/philip-churchley" target="_blank">SoundCloud</a>
+            <a href="https://www.youtube.com/@PhilipChurchley" target="_blank">YouTube</a>
          </div>
       </div>
       <div>
          <h3>Contact</h3>
          <div class="first-footer-sub">
-            <a href="https://www.instagram.com/p.churchley/">Instagram</a>
-            <a href="https://www.linkedin.com/in/philip-churchley/">LinkedIn</a>
-            <a href="mailto:pchurchl@umich.edu">pchurchl@umich.edu</a>
+            <a href="https://www.instagram.com/p.churchley/" target="_blank">Instagram</a>
+            <a href="https://www.linkedin.com/in/philip-churchley/" target="_blank">LinkedIn</a>
+            <a href="mailto:pchurchl@umich.edu" target="_blank">pchurchl@umich.edu</a>
          </div>
       </div>
    </div>
@@ -267,5 +276,6 @@
    </div>
 </footer>
 <script src="js/cereal.js"></script>
+<script src="js/custom.js"></script>
 
 </html>
