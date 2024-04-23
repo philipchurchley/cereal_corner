@@ -1,6 +1,6 @@
 
 let cards = document.querySelectorAll(".card");
-let cardsimgorig = ["url('../images/krave.png')", "url('../images/chowheats.png')", "url('../images/hboo.png')", "url('../images/cchocula.png')", "url('../images/chex.png')"]
+let cardsimgorig = ["url('./images/krave.png')", "url('./images/chowheats.png')", "url('./images/hboo.png')", "url('./images/cchocula.png')", "url('./images/chex.png')"]
 
 //manual slide for accessibility
 document.getElementById("right").addEventListener('click', function () {
